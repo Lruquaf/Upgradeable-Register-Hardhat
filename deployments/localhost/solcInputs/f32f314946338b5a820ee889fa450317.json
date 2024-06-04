@@ -1,0 +1,43 @@
+{
+  "language": "Solidity",
+  "sources": {
+    "contracts/Register.sol": {
+      "content": "// SPDX-License-Identifier: MIT\r\n\r\npragma solidity 0.8.20;\r\n\r\ncontract Register {\r\n    uint256 internal value;\r\n\r\n    event ValueChanged(uint256 newValue);\r\n\r\n    function load(uint256 _newValue) public {\r\n        value = _newValue;\r\n        emit ValueChanged(_newValue);\r\n    }\r\n\r\n    function retrieve() public view returns (uint256) {\r\n        return value;\r\n    }\r\n\r\n    function version() public pure returns (uint256) {\r\n        return 1;\r\n    }\r\n}\r\n"
+    }
+  },
+  "settings": {
+    "optimizer": {
+      "enabled": false,
+      "runs": 9999,
+      "details": {
+        "yul": true,
+        "yulDetails": {
+          "optimizerSteps": "u"
+        }
+      }
+    },
+    "viaIR": false,
+    "evmVersion": "paris",
+    "outputSelection": {
+      "*": {
+        "*": [
+          "abi",
+          "evm.bytecode",
+          "evm.deployedBytecode",
+          "evm.methodIdentifiers",
+          "metadata",
+          "devdoc",
+          "userdoc",
+          "storageLayout",
+          "evm.gasEstimates"
+        ],
+        "": [
+          "ast"
+        ]
+      }
+    },
+    "metadata": {
+      "useLiteralContent": true
+    }
+  }
+}

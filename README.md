@@ -1,13 +1,7 @@
-# Sample Hardhat Project
+# Upgradeable Register
 
-This project demonstrates a basic Hardhat use case. It comes with a sample contract, a test for that contract, and a Hardhat Ignition module that deploys that contract.
+This smart contract represents a simple register with load, increment and clear signals. In first implementation, register had only load signal. With upgrade, increment signal was added in next implementation. After the last upgrade, clear signal was added in the latest implementation. For upgrades OpenZeppelinTransparentProxy was used.
 
-Try running some of the following tasks:
-
-```shell
-npx hardhat help
-npx hardhat test
-REPORT_GAS=true npx hardhat test
-npx hardhat node
-npx hardhat ignition deploy ./ignition/modules/Lock.js
-```
+Register (V1) ---> LOAD
+RegisterV2 ---> LOAD, INCREMENT
+RegisterV3 ---> LOAD, INCREMENT, CLEAR
